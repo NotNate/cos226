@@ -1,0 +1,1319 @@
+
+
+netid => nb6364
+assignment => Burrows
+file01 => @/n/fs/tigerfile/Files/COS226_F2022/Burrows/submissions/0a007ff26a99179366f46d779a13250e/CircularSuffixArray.java;filename=20221204154714/CircularSuffixArray.java
+file02 => @/n/fs/tigerfile/Files/COS226_F2022/Burrows/submissions/0a007ff26a99179366f46d779a13250e/MoveToFront.java;filename=20221204161256/MoveToFront.java
+file03 => @/n/fs/tigerfile/Files/COS226_F2022/Burrows/submissions/0a007ff26a99179366f46d779a13250e/BurrowsWheeler.java;filename=20221204165253/BurrowsWheeler.java
+The following files were submitted:
+----------------------------------
+ 2.2K Dec  4 16:52 BurrowsWheeler.java
+ 3.1K Dec  4 15:47 CircularSuffixArray.java
+ 2.1K Dec  4 16:12 MoveToFront.java
+*** MISSING readme.txt ***
+
+
+********************************************************************************
+*  COMPILING                                                                    
+********************************************************************************
+
+
+% javac CircularSuffixArray.java
+*-----------------------------------------------------------
+
+% javac MoveToFront.java
+*-----------------------------------------------------------
+
+% javac BurrowsWheeler.java
+*-----------------------------------------------------------
+
+
+================================================================
+
+
+Checking the APIs of your programs.
+*-----------------------------------------------------------
+CircularSuffixArray:
+
+MoveToFront:
+
+BurrowsWheeler:
+
+================================================================
+
+
+********************************************************************************
+*  CHECKING STYLE AND COMMON BUG PATTERNS                                       
+********************************************************************************
+
+
+% spotbugs *.class
+*-----------------------------------------------------------
+
+
+================================================================
+
+
+% pmd .
+*-----------------------------------------------------------
+
+
+================================================================
+
+
+% checkstyle *.java
+*-----------------------------------------------------------
+[WARN] MoveToFront.java:8:27: The static variable 'ASCII' must start with a lowercase letter and use camelCase. If you intended 'ASCII' to be a constant, add the modifier 'final' immediately after 'static' and use ALL_UPPERCASE. [StaticVariableName]
+Checkstyle ends with 0 errors and 1 warning.
+
+% custom checkstyle checks for CircularSuffixArray.java
+*-----------------------------------------------------------
+
+% custom checkstyle checks for MoveToFront.java
+*-----------------------------------------------------------
+[WARN] MoveToFront.java:1: Declaring 2 non-final static variables ('ASCII', 'charIndex') suggests poor design in this class. [StaticVariableCount]
+Checkstyle ends with 0 errors and 1 warning.
+
+% custom checkstyle checks for BurrowsWheeler.java
+*-----------------------------------------------------------
+
+
+================================================================
+
+
+********************************************************************************
+*  TESTING CORRECTNESS
+********************************************************************************
+
+Testing correctness of CircularSuffixArray
+*-----------------------------------------------------------
+Running 20 total tests.
+
+Test 1: check index() and length() with strings from text files
+  * abra.txt
+  * weekend.txt
+  * banana.txt
+  * tigers.txt
+==> passed
+
+Test 2: check index() and length() with random binary strings
+  * length = 3
+  * length = 4
+  * length = 5
+  * length = 6
+  * length = 7
+  * length = 8
+  * length = 9
+  * length = 10
+==> passed
+
+Test 3: check index() and length() with random binary strings
+  * length = 50
+  * length = 100
+  * length = 1000
+==> passed
+
+Test 4: check index() and length() with random DNA strings
+  * length = 3
+  * length = 4
+  * length = 5
+  * length = 6
+  * length = 7
+  * length = 8
+  * length = 9
+  * length = 10
+==> passed
+
+Test 5: check index() and length() with random uppercase strings
+  * length = 3
+  * length = 6
+  * length = 10
+  * length = 100
+  * length = 1000
+==> passed
+
+Test 6: check index() and length() with random ASCII strings (excluding 0x00)
+  * length = 4
+  * length = 7
+  * length = 10
+  * length = 100
+  * length = 1000
+==> passed
+
+Test 7: check index() and length() with random ASCII strings
+  * length = 5
+  * length = 8
+  * length = 10
+  * length = 100
+  * length = 1000
+==> passed
+
+Test 8: check index() and length() with random extended ASCII strings
+        (excluding 0xFF)
+  * length = 10
+  * length = 100
+  * length = 1000
+==> passed
+
+Test 9: check index() and length() with random extended ASCII strings
+  * length = 10
+  * length = 100
+  * length = 1000
+==> passed
+
+Test 10: check index() and length() with strings from text files
+  * cadabra.txt
+  * amendments.txt
+  * moby1.txt
+  * dickens1000.txt
+==> passed
+
+Test 11: check index() and length() with strings from binary files
+  * us.gif
+  * CS_bricks.jpg
+  * rand1K.bin
+==> passed
+
+Test 12: check index() and length() with random strings of length 0, 1, and 2
+  * length = 0
+  * length = 1
+  * length = 2
+==> passed
+
+Test 13: check that index() throws an exception when argument is out of bounds
+  * string of length 10
+  * string of length 100
+  * string of length 2
+  * string of length 1
+  * string of length 0
+==> passed
+
+Test 14: check that constructor throws an exception when argument is null
+==> passed
+
+Test 15: check that two CircularSuffixArray objects can be created at the same time
+  * cadabra.txt and amendments.txt
+  * amendments.txt and cadabra.txt
+  * dickens1000.txt and cadabra.txt
+==> passed
+
+Test 16: check that CircularSuffixArray is immutable
+  * string = "HAEIRJPYXSLHKDMBCISTJKFGZQTAQH"
+  * string = "ABBABBABABAAABAAAABBBBBBBBAAAA"
+  * string = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  * string = hex representation: 8d 17 3f 22 6d eb f2 ac bb 48 43 de 3a 2a 5a 
+==> passed
+
+Test 17: check index() and length() with corner-case strings
+  * a.txt
+  * nomatch.txt
+  * zebra.txt
+  * alphanum.txt
+==> passed
+
+Test 18: check index() and length() with periodic strings
+  * stars.txt
+  * couscous.txt
+==> passed
+
+Test 19: check index() and length() with unary strings
+  * length 10 string
+  * length 100 string
+  * length 1000 string
+==> passed
+
+Test 20: check index() and length() with random periodic strings
+  * length 2 string over binary alphabet, repeated 2 times
+  * length 3 string over binary alphabet, repeated 10 times
+  * length 4 string over binary alphabet, repeated 4 times
+  * length 5 string over binary alphabet, repeated 3 times
+  * length 6 string over binary alphabet, repeated 2 times
+  * length 7 string over uppercase alphabet, repeated 2 times
+  * length 8 string over uppercase alphabet, repeated 3 times
+  * length 9 string over uppercase alphabet, repeated 4 times
+==> passed
+
+Total: 20/20 tests passed!
+
+
+================================================================
+Testing correctness of MoveToFront
+*-----------------------------------------------------------
+Running 25 total tests.
+
+Test 1a: check main() on text files
+  * java MoveToFront - < abra.txt
+  * java MoveToFront - < zebra.txt
+  * java MoveToFront - < amendments.txt
+  * java MoveToFront - < aesop.txt
+==> passed
+
+Test 1b: check main() on text files
+  * java MoveToFront + < abra.txt.mtf
+  * java MoveToFront + < zebra.txt.mtf
+  * java MoveToFront + < amendments.txt.mtf
+  * java MoveToFront + < aesop.txt.mtf
+==> passed
+
+Test 2a: check parsing of argument "-" in main() on text files
+  * java MoveToFront - < abra.txt
+  * java MoveToFront - < zebra.txt
+  * java MoveToFront - < amendments.txt
+  * java MoveToFront - < aesop.txt
+==> passed
+
+Test 2b: check parsing of argument "+" in main() on text files
+  * java MoveToFront + < abra.txt.mtf
+  * java MoveToFront + < zebra.txt.mtf
+  * java MoveToFront + < amendments.txt.mtf
+  * java MoveToFront + < aesop.txt.mtf
+==> passed
+
+Test 3a: check that main() is consistent with encode() on text files
+  * abra.txt
+  * zebra.txt
+  * amendments.txt
+  * aesop.txt
+==> passed
+
+Test 3b: check that main() is consistent with decode() on text files
+  * abra.txt.mtf
+  * zebra.txt.mtf
+  * amendments.txt.mtf
+  * aesop.txt.mtf
+==> passed
+
+Test 4a: check encode() on text files
+  * abra.txt
+  * zebra.txt
+  * amendments.txt
+  * aesop.txt
+  * stars.txt
+  * alphanum.txt
+  * a.txt
+==> passed
+
+Test 4b: check encode() on binary files
+  * us.gif
+  * CS_bricks.jpg
+  * rand10K.bin
+==> passed
+
+Test 4c: check encode() on random inputs
+  * 10 random characters from { A } alphabet
+  * 10 random characters from { A, B } alphabet
+  * 10 random characters from { A, T, C, G } alphabet
+  * 10 random characters from uppercase letter alphabet
+  * 1000 random characters from { A } alphabet
+  * 1000 random characters from { A, B } alphabet
+  * 1000 random characters from { A, T, C, G } alphabet
+  * 1000 random characters from uppercase letter alphabet
+==> passed
+
+Test 4d: check encode() on more random inputs
+  * 1000 random characters from ASCII alphabet 
+  * 1000 random characters from extended ASCII alphabet
+  * 1000 random characters from extended ASCII alphabet (excluding 0x00)
+  * 1000 random characters from extended ASCII alphabet (excluding 0xFF)
+==> passed
+
+Test 5a: check decode() on move-to-front-encoded text files
+  * abra.txt.mtf
+  * zebra.txt.mtf
+  * amendments.txt.mtf
+  * aesop.txt.mtf
+  * stars.txt.mtf
+  * alphanum.txt.mtf
+  * a.txt.mtf
+==> passed
+
+Test 5b: check decode() on move-to-front encoded binary files
+  * us.gif.mtf
+  * CS_bricks.jpg.mtf
+  * rand10K.bin.mtf
+==> passed
+
+Test 5c: check decode() on random inputs
+  * 10 random characters from { A } alphabet
+  * 10 random characters from { A, B } alphabet
+  * 10 random characters from { A, T, C, G } alphabet
+  * 10 random characters from uppercase letter alphabet
+  * 1000 random characters from { A } alphabet
+  * 1000 random characters from { A, B } alphabet
+  * 1000 random characters from { A, T, C, G } alphabet
+  * 1000 random characters from uppercase letter alphabet
+==> passed
+
+Test 5d: check decode() on more random inputs
+  * 1000 random characters from ASCII alphabet 
+  * 1000 random characters from extended ASCII alphabet
+  * 1000 random characters from extended ASCII alphabet (excluding 0x00)
+  * 1000 random characters from extended ASCII alphabet (excluding 0xFF)
+==> passed
+
+Test 5e: check decode() on random inputs
+         that were encoded with move-to-front
+  * 10 random characters from { A } alphabet
+  * 10 random characters from { A, B } alphabet
+  * 10 random characters from { A, T, C, G } alphabet
+  * 10 random characters from uppercase letter alphabet
+  * 1000 random characters from { A } alphabet
+  * 1000 random characters from { A, B } alphabet
+  * 1000 random characters from { A, T, C, G } alphabet
+  * 1000 random characters from uppercase letter alphabet
+==> passed
+
+Test 5f: check decode() on more random inputs
+         that were encoded with move-to-front
+  * 1000 random characters from ASCII alphabet 
+  * 1000 random characters from extended ASCII alphabet
+  * 1000 random characters from extended ASCII alphabet (excluding 0x00)
+  * 1000 random characters from extended ASCII alphabet (excluding 0xFF)
+==> passed
+
+Test 6a: check whether decode(encode()) = original on text files
+  * abra.txt
+  * zebra.txt
+  * amendments.txt
+  * aesop.txt
+  * stars.txt
+  * alphanum.txt
+  * a.txt
+==> passed
+
+Test 6b: check whether decode(encode()) = original on binary files
+  * us.gif
+  * CS_bricks.jpg
+  * rand10K.bin
+==> passed
+
+Test 6c: check that decode(encode()) = original on random inputs
+  * 10 random characters from { A } alphabet
+  * 10 random characters from { A, B } alphabet
+  * 10 random characters from { A, T, C, G } alphabet
+  * 10 random characters from uppercase letter alphabet
+  * 100 random characters from { A } alphabet
+  * 1000 random characters from { A, B } alphabet
+  * 1000 random characters from { A, T, C, G } alphabet
+  * 1000 random characters from uppercase letter alphabet
+==> passed
+
+Test 6d: check that decode(encode()) = original on random inputs
+  * 1000 random characters from ASCII alphabet 
+  * 1000 random characters from extended ASCII alphabet
+  * 1000 random characters from extended ASCII alphabet (excluding 0x00)
+  * 1000 random characters from extended ASCII alphabet (excluding 0xFF)
+==> passed
+
+Test 7a: check that encode() calls either close() or flush()
+  * abra.txt
+  * zebra.txt
+  * amendments.txt
+==> passed
+
+Test 7b: check that decode() calls either close() or flush()
+  * abra.txt.mtf
+  * zebra.txt.mtf
+  * amendments.txt.mtf
+==> passed
+
+Test 8a: check encode() on large files
+  * aesop.txt
+  * rand100K.bin
+  * world192.txt
+==> passed
+
+Test 8b: check decode() on large files
+  * aesop.txt.mtf
+  * rand100K.bin.mtf
+  * world192.txt.mtf
+==> passed
+
+Test 8c: check whether decode(encode()) = original on large files
+  * aesop.txt
+  * rand100K.bin
+  * world192.txt
+==> passed
+
+
+Total: 25/25 tests passed!
+
+
+================================================================
+********************************************************************************
+*  TESTING CORRECTNESS (substituting reference CircularSuffixArray)
+********************************************************************************
+
+Testing correctness of BurrowsWheeler
+*-----------------------------------------------------------
+Running 28 total tests.
+
+Test 1a: check main() on text files
+  * java BurrowsWheeler - < abra.txt
+  * java BurrowsWheeler - < zebra.txt
+    - student   length = 16
+    - reference length = 9
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 04
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 04 72 65 7a 62 61 
+
+  * java BurrowsWheeler - < cadabra.txt
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 08
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 08 41 52 44 21 52 43 41 41 41 41 42 42 
+
+  * java BurrowsWheeler - < amendments.txt
+    - student   length = 16
+    - reference length = 18373
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 0e
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 0e 2b 3a 2e 2e 2e 2e .. 69 69 69 69 69 69 69 69 69 
+
+==> FAILED
+
+Test 1b: check main() on text files
+  * java BurrowsWheeler + < abra.txt.bwt
+  * java BurrowsWheeler + < zebra.txt.bwt
+  * java BurrowsWheeler + < cadabra.txt.bwt
+  * java BurrowsWheeler + < amendments.txt.bwt
+==> passed
+
+Test 2a: check parsing of argument "-" in main() on text files
+  * java BurrowsWheeler - < abra.txt
+  * java BurrowsWheeler - < zebra.txt
+  * java BurrowsWheeler - < cadabra.txt
+  * java BurrowsWheeler - < amendments.txt
+==> passed
+
+Test 2b: check parsing of argument "+" in main() on text files
+  * java BurrowsWheeler + < abra.txt.bwt
+  * java BurrowsWheeler + < zebra.txt.bwt
+  * java BurrowsWheeler + < cadabra.txt.bwt
+  * java BurrowsWheeler + < amendments.txt.bwt
+==> passed
+
+Test 3a: check that main() is consistent with transform() on text files
+  * abra.txt
+  * zebra.txt
+  * cadabra.txt
+  * amendments.txt
+==> passed
+
+Test 3b: check that main() is consistent with inverseTransform() on text files
+  * abra.txt.bwt
+  * zebra.txt.bwt
+  * cadabra.txt.bwt
+  * amendments.txt.bwt
+==> passed
+
+Test 4a: check transform() on text files
+  * abra.txt
+  * zebra.txt
+    - student   length = 16
+    - reference length = 9
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 04
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 04 72 65 7a 62 61 
+
+  * cadabra.txt
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 08
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 08 41 52 44 21 52 43 41 41 41 41 42 42 
+
+  * amendments.txt
+    - student   length = 16
+    - reference length = 18373
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 0e
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 0e 2b 3a 2e 2e 2e 2e .. 69 69 69 69 69 69 69 69 69 
+
+==> FAILED
+
+Test 4b: check transform() on corner-case text files
+  * alphanum.txt
+    - student   length = 16
+    - reference length = 40
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 0a
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 0a 7a 30 31 32 33 .. 71 72 73 74 75 76 77 78 79 
+
+  * a.txt
+    - student   length = 16
+    - reference length = 5
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 00
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 00 61 
+
+==> FAILED
+
+Test 4c: check transform() on binary files
+  * us.gif
+    - student   length = 16
+    - reference length = 12404
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 0f
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 0f 7d 2c 00 41 00 d5 .. 1f 33 ff 00 bf 0a 04 ff d6 
+
+  * CS_bricks.jpg
+    - student   length = 16
+    - reference length = 24571
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 5f
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 5f f0 01 00 00 00 01 .. 04 08 d9 07 81 0a 1e d8 00 
+
+  * rand10K.bin
+    - student   length = 16
+    - reference length = 10004
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 04
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 04 25 c6 6c 5d e4 ce .. d5 1e b8 31 4d 9b 2e fe 08 
+
+==> FAILED
+
+Test 4d: check transform() on random inputs
+  * 10 random characters from binary alphabet
+    - student   length = 16
+    - reference length = 14
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 05
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 05 42 42 41 42 41 41 41 42 41 41 
+
+    - failed on trial 1 of 100
+    - input = 'ABBAABABAA'
+
+  * 10 random characters from DNA alphabet
+    - student   length = 16
+    - reference length = 14
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 06
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 06 43 54 41 43 41 41 54 54 43 47 
+
+    - failed on trial 1 of 100
+    - input = 'GTTACCAACT'
+
+  * 10 random characters from uppercase alphabet
+    - student   length = 16
+    - reference length = 14
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 08
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 08 52 4c 41 53 59 4a 42 50 4e 4f 
+
+    - failed on trial 1 of 100
+    - input = 'SLBPRAJOYN'
+
+  * 1000 random characters from binary alphabet
+    - student   length = 16
+    - reference length = 1004
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 4e
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 4e 42 41 41 42 41 .. 41 42 41 41 41 41 41 41 41 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from DNA alphabet
+    - student   length = 16
+    - reference length = 1004
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 59
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 59 43 54 43 41 54 .. 43 47 54 54 54 54 41 43 47 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from uppercase alphabet
+    - student   length = 16
+    - reference length = 1004
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 03
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 03 37 43 4c 49 50 4f .. 4b 4e 50 4d 4b 4b 45 5a 49 
+
+    - failed on trial 1 of 100
+
+==> FAILED
+
+Test 4e: check transform() on more random inputs
+  * 1000 random characters from ASCII alphabet 
+    - student   length = 16
+    - reference length = 1004
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 03
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 03 9b 23 4d 63 20 17 .. 1e 65 5d 42 0c 3e 30 7f 39 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from extended ASCII alphabet
+    - student   length = 16
+    - reference length = 1004
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = f7
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 f7 59 4a 9c 10 14 .. b1 33 d4 7b 04 cc e9 8b 20 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from extended ASCII alphabet (excluding 0x00)
+    - student   length = 16
+    - reference length = 1004
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 02
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 02 1f 3c dd 2e 30 9f .. a9 3d e4 b6 5c 0e 71 22 f2 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from extended ASCII alphabet (excluding 0xFF)
+    - student   length = 16
+    - reference length = 1004
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 01
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 01 06 30 c2 6b 19 de .. b5 9e 4a 63 1b 2e 0b f4 15 
+
+    - failed on trial 1 of 100
+
+==> FAILED
+
+Test 4f: check tranform() on random inputs that are circular
+         shifts of themselves
+  * 5 random strings from unary alphabet
+    - student   length = 16
+    - reference length = 14
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 02
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 02 41 41 41 41 41 41 41 41 41 41 
+
+    - failed on trial 1 of 2
+    - input = 'AAAAAAAAAA'
+
+  * 5 random strings from binary alphabet
+    - student   length = 16
+    - reference length = 14
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 07
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 07 41 41 41 41 41 41 41 41 41 41 
+
+    - failed on trial 1 of 100
+    - input = 'AAAAAAAAAA'
+
+  * 5 random strings from DNA alphabet
+    - student   length = 16
+    - reference length = 29
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 00
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 00 43 43 43 43 43 .. 41 41 41 41 41 41 41 41 41 
+
+    - failed on trial 1 of 100
+    - input = 'AAGACAAGACAAGACAAGACAAGAC'
+
+  * 5 random strings from uppercase alphabet
+    - student   length = 16
+    - reference length = 14
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 00
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 00 5a 5a 42 42 55 55 47 47 50 50 
+
+    - failed on trial 1 of 100
+    - input = 'BGUPZBGUPZ'
+
+==> FAILED
+
+Test 5a: check inverseTransform() on text files
+  * abra.txt.bwt
+  * zebra.txt.bwt
+  * cadabra.txt.bwt
+  * amendments.txt.bwt
+==> passed
+
+Test 5b: check inverseTransform() on corner-case text files
+  * alphanum.txt.bwt
+  * a.txt.bwt
+  * stars.txt.bwt
+  * couscous.txt.bwt
+==> passed
+
+Test 5c: check inverseTransform() on binary files
+  * us.gif.bwt
+  * CS_bricks.jpg.bwt
+  * rand10K.bin.bwt
+==> passed
+
+Test 5d: check inverseTransform() of transform() on random inputs
+  * 10 random characters from unary alphabet
+  * 10 random characters from binary alphabet
+  * 10 random characters from DNA alphabet
+  * 10 random characters from uppercase alphabet
+  * 100 random characters from unary alphabet
+  * 1000 random characters from binary alphabet
+  * 1000 random characters from DNA alphabet
+  * 1000 random characters from uppercase alphabet
+==> passed
+
+Test 5e: check inverseTransform() of transform() on more random inputs
+  * 1000 random characters from ASCII alphabet 
+  * 1000 random characters from extended ASCII alphabet
+  * 1000 random characters from extended ASCII alphabet (excluding 0x00)
+  * 1000 random characters from extended ASCII alphabet (excluding 0xFF)
+==> passed
+
+Test 6a: check that inverseTransform(transform()) = original on text files
+  * abra.txt
+  * zebra.txt
+    - student   length = 12
+    - reference length = 5
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 7a
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 7a 65 62 72 61 
+
+  * cadabra.txt
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 43
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 43 41 44 41 42 52 41 21 41 42 52 41 
+
+  * amendments.txt
+    - student   length = 12
+    - reference length = 18369
+    - entry 1 of the two sequences are not equal
+    - student   entry = 42
+    - reference entry = 72
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 41 72 74 69 63 6c 65 20 49 .. 65 72 76 65 6e 65 64 2e 0a 
+
+==> FAILED
+
+Test 6b: check that inverseTransform(transform()) = original on corner-case text files
+  * alphanum.txt
+    - student   length = 12
+    - reference length = 36
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 61
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 61 62 63 64 65 66 67 68 69 .. 31 32 33 34 35 36 37 38 39 
+
+  * a.txt
+    - student   length = 12
+    - reference length = 1
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 61
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 61 
+
+  * stars.txt
+    - student   length = 12
+    - reference length = 13
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 2a
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 
+
+  * couscous.txt
+    - student   length = 12
+    - reference length = 8
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 63
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 63 6f 75 73 63 6f 75 73 
+
+==> FAILED
+
+Test 6c: check that inverseTransform(transform()) = original on binary files
+  * us.gif
+    - student   length = 12
+    - reference length = 12400
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 47
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 47 49 46 38 39 61 8e 01 01 .. 7f 03 1e 38 cc 41 00 00 3b 
+
+  * CS_bricks.jpg
+    - student   length = 12
+    - reference length = 24567
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = ff
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: ff d8 ff e1 00 16 45 78 69 .. 46 8d 01 a3 46 8d 07 ff d9 
+
+  * rand10K.bin
+    - student   length = 12
+    - reference length = 10000
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 1a
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 1a de 9d f2 73 73 0c 05 e1 .. 46 04 ae 11 4f d4 bc 2d b4 
+
+==> FAILED
+
+Test 6d: check that inverseTransform(tranform()) = original on random inputs
+  * 10 random characters from binary alphabet
+    - student   length = 12
+    - reference length = 10
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 42
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 42 42 42 42 42 42 41 41 41 42 
+
+    - failed on trial 1 of 100
+    - input = 'BBBBBBAAAB'
+
+  * 10 random characters from DNA alphabet
+    - student   length = 12
+    - reference length = 10
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 54
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 54 43 47 47 47 54 41 43 41 43 
+
+    - failed on trial 1 of 100
+    - input = 'TCGGGTACAC'
+
+  * 10 random characters from uppercase alphabet
+    - student   length = 12
+    - reference length = 10
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 42
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 42 42 56 45 53 51 47 53 58 43 
+
+    - failed on trial 1 of 100
+    - input = 'BBVESQGSXC'
+
+  * 1000 random characters from binary alphabet
+    - student   length = 12
+    - reference length = 1000
+    - entry 1 of the two sequences are not equal
+    - student   entry = 42
+    - reference entry = 41
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 41 41 42 41 42 41 41 41 42 .. 41 41 42 41 41 41 42 41 41 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from DNA alphabet
+    - student   length = 12
+    - reference length = 1000
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 43
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 43 43 47 47 47 54 41 54 54 .. 54 43 54 43 54 43 43 54 47 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from uppercase alphabet
+    - student   length = 12
+    - reference length = 1000
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 42
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 42 57 4f 42 41 52 54 59 46 .. 4a 45 47 54 59 45 41 51 58 
+
+    - failed on trial 1 of 100
+
+==> FAILED
+
+Test 6e: check that inverseTransform(tranform()) = original on random inputs
+  * 1000 random characters from ASCII alphabet 
+    - student   length = 12
+    - reference length = 1000
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 72
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 72 7a 2f 79 47 06 5a 60 3c .. 2d 20 3c 0b 4e 58 2a 04 53 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from extended ASCII alphabet
+    - student   length = 12
+    - reference length = 1000
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = d9
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: d9 7c 49 17 d9 da dd e0 d7 .. 74 a3 47 43 63 8d 49 7b e8 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from extended ASCII alphabet (excluding 0x00)
+    - student   length = 12
+    - reference length = 1000
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = f0
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: f0 d2 94 39 83 f2 36 cb ad .. 28 b7 19 4c 56 18 53 04 57 
+
+    - failed on trial 1 of 100
+
+  * 1000 random characters from extended ASCII alphabet (excluding 0xFF)
+    - student   length = 12
+    - reference length = 1000
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = d0
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: d0 e2 7c e7 5f dc a1 3c ec .. 86 20 e8 80 52 cd 82 57 7b 
+
+    - failed on trial 1 of 100
+
+==> FAILED
+
+Test 6f: check that inverseTransform(tranform()) = original
+         on random inputs that are circular shifts of themselves
+  * random strings from unary alphabet
+    - student   length = 12
+    - reference length = 15
+    - entry 1 of the two sequences are not equal
+    - student   entry = 42
+    - reference entry = 41
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 
+
+    - failed on trial 1 of 2
+    - input = 'AAAAAAAAAAAAAAA'
+
+  * random strings from binary alphabet
+    - student   length = 12
+    - reference length = 15
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 42
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 42 41 42 42 42 42 41 42 42 42 42 41 42 42 42 
+
+    - failed on trial 1 of 100
+    - input = 'BABBBBABBBBABBB'
+
+  * random strings from DNA alphabet
+    - student   length = 12
+    - reference length = 20
+    - entry 1 of the two sequences are not equal
+    - student   entry = 42
+    - reference entry = 43
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 41 43 43 41 47 41 43 43 41 47 41 43 43 41 47 41 43 43 41 47 
+
+    - failed on trial 1 of 100
+    - input = 'ACCAGACCAGACCAGACCAG'
+
+  * random strings from uppercase alphabet
+    - student   length = 12
+    - reference length = 15
+    - entry 1 of the two sequences are not equal
+    - student   entry = 42
+    - reference entry = 53
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 41 53 53 4d 51 41 53 53 4d 51 41 53 53 4d 51 
+
+    - failed on trial 1 of 100
+    - input = 'ASSMQASSMQASSMQ'
+
+==> FAILED
+
+Test 7a: check that transform() calls either close() or flush()
+  * abra.txt
+  * zebra.txt
+    - student   length = 16
+    - reference length = 9
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 04
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 04 72 65 7a 62 61 
+
+  * cadabra.txt
+    - entry 3 of the two sequences are not equal
+    - student   entry = 03
+    - reference entry = 08
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 00 08 41 52 44 21 52 43 41 41 41 41 42 42 
+
+  * amendments.txt
+    - student   length = 16
+    - reference length = 18373
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 0e
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 0e 2b 3a 2e 2e 2e 2e .. 69 69 69 69 69 69 69 69 69 
+
+==> FAILED
+
+Test 7b: check that inverseTransform() calls either close() or flush()
+  * abra.txt.bwt
+  * zebra.txt.bwt
+  * cadabra.txt.bwt
+  * amendments.txt.bwt
+==> passed
+
+Test 8a: check transform() on large files
+  * aesop.txt
+    - student   length = 16
+    - reference length = 191947
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = b3
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 b3 3d 20 20 20 20 20 .. 69 69 65 61 61 61 75 75 75 
+
+  * rand100K.bin
+    - student   length = 16
+    - reference length = 100004
+    - entry 2 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = b1
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 00 b1 0d f1 f8 81 ef d8 .. 8d 94 73 51 51 37 57 cf 91 
+
+  * world192.txt
+    - student   length = 16
+    - reference length = 2473404
+    - entry 1 of the two sequences are not equal
+    - student   entry = 00
+    - reference entry = 09
+    - student:   00 00 00 03 41 52 44 21 52 43 41 41 41 41 42 42 
+    - reference: 00 09 3a f0 0d 0d 0d 0d 0d .. 41 75 6f 49 20 20 6e 6e 28 
+
+==> FAILED
+
+Test 8b: check inverseTransform() on large files
+  * aesop.txt.bwt
+  * rand100K.bin.bwt
+  * world192.txt.bwt
+==> passed
+
+Test 8c: check that inverseTransform(transform()) = original on large files
+  * aesop.txt
+    - student   length = 12
+    - reference length = 191943
+    - entry 1 of the two sequences are not equal
+    - student   entry = 42
+    - reference entry = 65
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 41 65 73 6f 70 27 73 20 46 .. 72 20 73 75 6e 73 3f 22 0a 
+
+  * rand100K.bin
+    - student   length = 12
+    - reference length = 100000
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 73
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 73 fe be 6c 9d a3 82 eb 5e .. f5 60 4f 60 99 82 d5 72 38 
+
+  * world192.txt
+    - student   length = 12
+    - reference length = 2473400
+    - entry 0 of the two sequences are not equal
+    - student   entry = 41
+    - reference entry = 2a
+    - student:   41 42 52 41 43 41 44 41 42 52 41 21 
+    - reference: 2a 2a 2a 2a 54 68 65 20 50 .. 72 6c 61 6e 64 0d 0a 0d 0a 
+
+==> FAILED
+
+
+Total: 12/28 tests passed!
+
+
+================================================================
+********************************************************************************
+*  MEMORY
+********************************************************************************
+
+Analyzing memory of CircularSuffixArray
+*-----------------------------------------------------------
+Running 10 total tests.
+
+Memory usage of a CircularSuffixArray for a random string of length n.
+Maximum allowed memory is 64n + 128.
+
+                 n        bytes
+-------------------------------
+=> passed       16         1024
+=> passed       32         1936
+=> passed       64         3760
+=> passed      128         7408
+=> passed      256        14704
+=> passed      512        29296
+=> passed     1024        58480
+=> passed     2048       116848
+=> passed     4096       233584
+=> passed     8192       467056
+==> 10/10 tests passed
+
+Total: 10/10 tests passed!
+
+Estimated student memory (bytes) = 57.00 n + 112.00   (R^2 = 1.000)
+
+================================================================
+
+
+
+********************************************************************************
+*  TIMING
+********************************************************************************
+
+Timing MoveToFront
+*-----------------------------------------------------------
+
+Running 4 total tests.
+
+Test 1: count calls to methods in BinaryStdOut from encode()
+  * abra.txt
+  * amendments.txt
+==> passed
+
+Test 2: count calls to methods in BinaryStdOut from decode()
+  * abra.txt.mtf
+  * amendments.txt.mtf
+==> passed
+
+Test 3: count calls to methods in BinaryStdIn from encode()
+  * abra.txt
+  * amendments.txt
+==> passed
+
+Test 4: count calls to methods in BinaryStdIn from decode()
+  * abra.txt.mtf
+  * amendments.txt.mtf
+==> passed
+
+Total: 4/4 tests passed!
+
+
+================================================================
+
+
+
+********************************************************************************
+*  TIMING (substituting reference CircularSuffixArray)
+********************************************************************************
+
+Timing BurrowsWheeler
+*-----------------------------------------------------------
+
+Running 6 total tests.
+
+Test 1: count calls to methods in CircularSuffixArray from transform()
+  * abra.txt
+  * amendments.txt
+    - transform() calls to index() = 16
+    - minimum number of calls      = 18369
+    - maximum number of calls      = 55107
+
+==> FAILED
+
+Test 2: count calls to methods in CircularSuffixArray from inverseTransform()
+  * abra.txt.bwt
+  * amendments.txt.bwt
+==> passed
+
+Test 3: count calls to methods in BinaryStdOut from transform()
+  * abra.txt
+  * amendments.txt
+    - wrong number of calls to write()
+    - n                       = 18369
+    - calls to write()        = 13
+    - minimum number of calls = 18370
+    - maximum number of calls = 18370
+
+==> FAILED
+
+Test 4: count calls to methods in BinaryStdOut from inverseTransform()
+  * abra.txt.bwt
+  * amendments.txt.bwt
+==> passed
+
+Test 5: count calls to methods in BinaryStdIn from transform()
+  * abra.txt
+    - wrong number of calls to either readString() or readChar()
+    - n                                  = 12
+    - calls to readChar(8) or equivalent = 0
+    - calls to readString()              = 0
+    - there should be either 1 call to readString()
+      or 12 calls to readChar(8) or equivalent
+
+  * amendments.txt
+    - wrong number of calls to either readString() or readChar()
+    - n                                  = 18369
+    - calls to readChar(8) or equivalent = 0
+    - calls to readString()              = 0
+    - there should be either 1 call to readString()
+      or 18369 calls to readChar(8) or equivalent
+
+==> FAILED
+
+Test 6: count calls to methods in BinaryStdIn from inverseTransform()
+  * abra.txt.bwt
+  * amendments.txt.bwt
+==> passed
+
+Total: 3/6 tests passed!
+
+
+================================================================
+
+
+
+
